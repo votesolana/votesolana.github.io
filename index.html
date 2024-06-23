@@ -9,8 +9,13 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: rgb(23,177,240);
-        background: linear-gradient(90deg, rgba(23,177,240,1) 0%, rgba(255,255,255,1) 50%, rgba(252,69,69,1) 100%);
+        background: rgb(23, 177, 240);
+        background: linear-gradient(
+          90deg,
+          rgba(23, 177, 240, 1) 0%,
+          rgba(255, 255, 255, 1) 50%,
+          rgba(252, 69, 69, 1) 100%
+        );
       }
       .mainImg {
         width: 600px;
@@ -35,12 +40,12 @@
         text-decoration: underline;
       }
     </style>
+    <script src="https://terminal.jup.ag/main-v2.js"></script>
 
     <title>Vote Solana Home</title>
   </head>
   <body>
     <div id="container">
-
       <a
         href="https://dexscreener.com/solana/4bvgf1rvksqtfqe16km9szekdhuspuq8pfqqbn2mktg9"
       >
@@ -61,10 +66,21 @@
         src="https://www.dextools.io/widget-chart/en/solana/pe-light/4bVgF1rVkSQtFqe16Km9szeKdhuspuq8PFqqbn2mktG9?theme=light&chartType=2&chartResolution=30&drawingToolbars=false"
       ></iframe>
 
-      <a
-        href="https://raydium.io/swap/?inputMint=sol&outputMint=7xyVxmGWot6kWD3Su7g717UU4JiBWxsKGfzNtn61vbcV"
-        >BUY VOTE</a
-      >
+      <div id="integrated-terminal"></div>
+      <script>
+        window.Jupiter.init({
+          displayMode: "integrated",
+          strictTokenList: false,
+          integratedTargetId: "integrated-terminal",
+          endpoint: "https://api.mainnet-beta.solana.com",
+          formProps: {
+            initialOutputMint:  "7xyVxmGWot6kWD3Su7g717UU4JiBWxsKGfzNtn61vbcV",
+            fixedOutputMint: false
+          },
+        });
+      </script>
+   
+
       <a href="https://x.com/Vote_Solana">Follow us on Twitter</a>
       <a href="https://t.me/VoteCTO">Join the Telegram community!</a>
 
